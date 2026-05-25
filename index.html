@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,37 @@
             <li><a href="#candidaturas">Candidaturas</a></li>
             <li><a href="#entrevistas">Entrevistas</a></li>
             <li><a href="#pruebas-tecnicas">Pruebas técnicas</a></li>
-            <li><a href="#estadisticas">Estadíisticas</a></li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
         </ul>
     </nav>
     <main>
         <section id="dashboard">
             <h2>Dashboard</h2>
             <p>Resumen de tus candidaturas y procesos activos.</p>
+            <section class="stats-section" aria-labelledby="stats-title">
+                <h2 id="stats-title">Resumen</h2>
+                <div class="stats-grid">
+                   <article class="stat-card">
+                        <span class="stat-card__label">Candidaturas enviadas</span>
+                        <strong class="stat-card__value">24</strong>
+                    </article>
+
+                   <article class="stat-card">
+                        <span class="stat-card__label">Entrevistas</span>
+                        <strong class="stat-card__value">6</strong>
+                    </article>
+
+                   <article class="stat-card">
+                        <span class="stat-card__label">Pruebas técnicas</span>
+                        <strong class="stat-card__value">3</strong>
+                    </article>
+
+                   <article class="stat-card">
+                        <span class="stat-card__label">Rechazadas</span>
+                        <strong class="stat-card__value">8</strong>
+                    </article>
+                </div>
+            </section>
         </section>
 
         <section id="candidaturas">
