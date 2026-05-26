@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jobtrack-madrid</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header>
+    <header class="app-header">
         <h1>JobTrack Madrid</h1>
         <button type="button">Nueva Candidatura</button>
     </header>
-    <nav aria-label="Navegación principal">
+    <nav class="sidebar" aria-label="Navegación principal">
         <ul>
             <li><a href="#dashboard">Dashboard</a></li>
             <li><a href="#candidaturas">Candidaturas</a></li>
@@ -21,7 +22,7 @@
             <li><a href="#estadisticas">Estadísticas</a></li>
         </ul>
     </nav>
-    <main>
+    <main class="dashboard">
         <section id="dashboard">
             <h2>Dashboard</h2>
             <p>Resumen de tus candidaturas y procesos activos.</p>
@@ -53,7 +54,7 @@
 
         <section id="candidaturas">
             <h2>Candidaturas recientes</h2>
-            <table>
+            <table class="applications-table">
                 <thead>
                     <tr>
                         <th>Empresa</th>
