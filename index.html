@@ -13,115 +13,117 @@
         <h1>JobTrack Madrid</h1>
         <button type="button">Nueva Candidatura</button>
     </header>
-    <nav class="sidebar" aria-label="Navegación principal">
-        <ul>
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#candidaturas">Candidaturas</a></li>
-            <li><a href="#entrevistas">Entrevistas</a></li>
-            <li><a href="#pruebas-tecnicas">Pruebas técnicas</a></li>
-            <li><a href="#estadisticas">Estadísticas</a></li>
-        </ul>
-    </nav>
-    <main class="dashboard">
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            <p>Resumen de tus candidaturas y procesos activos.</p>
-            <section class="stats-section" aria-labelledby="stats-title">
-                <h2 id="stats-title">Resumen</h2>
-                <div class="stats-grid">
-                    <article class="stat-card">
-                        <span class="stat-card__label">Candidaturas enviadas</span>
-                        <strong class="stat-card__value">24</strong>
-                    </article>
+    <div class="app-layout">
+        <nav class="sidebar" aria-label="Navegación principal">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#candidaturas">Candidaturas</a></li>
+                <li><a href="#entrevistas">Entrevistas</a></li>
+                <li><a href="#pruebas-tecnicas">Pruebas técnicas</a></li>
+                <li><a href="#estadisticas">Estadísticas</a></li>
+            </ul>
+        </nav>
+        <main class="dashboard">
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+                <p>Resumen de tus candidaturas y procesos activos.</p>
+                <section class="stats-section" aria-labelledby="stats-title">
+                    <h2 id="stats-title">Resumen</h2>
+                    <div class="stats-grid">
+                        <article class="stat-card">
+                            <span class="stat-card__label">Candidaturas enviadas</span>
+                            <strong class="stat-card__value">24</strong>
+                        </article>
 
-                    <article class="stat-card">
-                        <span class="stat-card__label">Entrevistas</span>
-                        <strong class="stat-card__value">6</strong>
-                    </article>
+                        <article class="stat-card">
+                            <span class="stat-card__label">Entrevistas</span>
+                            <strong class="stat-card__value">6</strong>
+                        </article>
 
-                    <article class="stat-card">
-                        <span class="stat-card__label">Pruebas técnicas</span>
-                        <strong class="stat-card__value">3</strong>
-                    </article>
+                        <article class="stat-card">
+                            <span class="stat-card__label">Pruebas técnicas</span>
+                            <strong class="stat-card__value">3</strong>
+                        </article>
 
-                    <article class="stat-card">
-                        <span class="stat-card__label">Rechazadas</span>
-                        <strong class="stat-card__value">8</strong>
-                    </article>
-                </div>
+                        <article class="stat-card">
+                            <span class="stat-card__label">Rechazadas</span>
+                            <strong class="stat-card__value">8</strong>
+                        </article>
+                    </div>
+                </section>
             </section>
-        </section>
 
-        <section id="candidaturas">
-            <h2>Candidaturas recientes</h2>
-            <table class="applications-table">
-                <thead>
-                    <tr>
-                        <th>Empresa</th>
-                        <th>Puesto</th>
-                        <th>Stack</th>
-                        <th>Estado</th>
-                        <th>Fecha</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
+            <section id="candidaturas">
+                <h2>Candidaturas recientes</h2>
+                <table class="applications-table">
+                    <thead>
+                        <tr>
+                            <th>Empresa</th>
+                            <th>Puesto</th>
+                            <th>Stack</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>TalentHub</td>
-                        <td>Frontend Junior</td>
-                        <td>HTML, CSS, JavaScript</td>
-                        <td>
-                            <span class="status-badge status-badge--sent">Enviada</span>
-                        </td>
-                        <td>2026-05-20</td>
-                        <td>
-                            <button type="button">Ver</button>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>TalentHub</td>
+                            <td>Frontend Junior</td>
+                            <td>HTML, CSS, JavaScript</td>
+                            <td>
+                                <span class="status-badge status-badge--sent">Enviada</span>
+                            </td>
+                            <td>2026-05-20</td>
+                            <td>
+                                <button type="button">Ver</button>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>DevMadrid</td>
-                        <td>Angular Trainee</td>
-                        <td>Angular, TypeScript</td>
-                        <td>
-                            <span class="status-badge status-badge--interview">Entrevista</span>
-                        </td>
-                        <td>2026-05-18</td>
-                        <td>
-                            <button type="button">Ver</button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>DevMadrid</td>
+                            <td>Angular Trainee</td>
+                            <td>Angular, TypeScript</td>
+                            <td>
+                                <span class="status-badge status-badge--interview">Entrevista</span>
+                            </td>
+                            <td>2026-05-18</td>
+                            <td>
+                                <button type="button">Ver</button>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>CodeWorks</td>
-                        <td>Full Stack Junior</td>
-                        <td>Laravel, MySQL</td>
-                        <td>
-                            <span class="status-badge status-badge--test">Prueba técnica</span>
-                        </td>
-                        <td>2026-05-15</td>
-                        <td>
-                            <button type="button">Ver</button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>CodeWorks</td>
+                            <td>Full Stack Junior</td>
+                            <td>Laravel, MySQL</td>
+                            <td>
+                                <span class="status-badge status-badge--test">Prueba técnica</span>
+                            </td>
+                            <td>2026-05-15</td>
+                            <td>
+                                <button type="button">Ver</button>
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td>TechNova</td>
-                        <td>Frontend Developer</td>
-                        <td>React, CSS</td>
-                        <td>
-                            <span class="status-badge status-badge--rejected">Rechazada</span>
-                        </td>
-                        <td>2026-05-10</td>
-                        <td>
-                            <button type="button">Ver</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+                        <tr>
+                            <td>TechNova</td>
+                            <td>Frontend Developer</td>
+                            <td>React, CSS</td>
+                            <td>
+                                <span class="status-badge status-badge--rejected">Rechazada</span>
+                            </td>
+                            <td>2026-05-10</td>
+                            <td>
+                                <button type="button">Ver</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
