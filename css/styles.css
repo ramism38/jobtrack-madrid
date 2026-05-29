@@ -1,3 +1,10 @@
+/* ============================= */
+/* Variables globales */
+/* ============================= */
+/* 
+   Aquí declaramos colores, espaciados y radios reutilizables.
+   La idea es no repetir valores sueltos por todo el CSS.
+*/
 :root {
     --color-bg: #f4f6f8;
     --color-surface: #ffffff;
@@ -13,6 +20,14 @@
     --radius-md: 0.75rem;
 }
 
+
+/* ============================= */
+/* Reset y estilos base */
+/* ============================= */
+/* 
+   box-sizing ayuda a que padding y border no rompan los tamaños.
+   El body define la fuente, el fondo y el color general del texto.
+*/
 * {
     box-sizing: border-box;
 }
@@ -24,6 +39,14 @@ body {
     color: var(--color-text);
 }
 
+
+/* ============================= */
+/* Header principal */
+/* ============================= */
+/* 
+   Header superior de la aplicación.
+   Contiene el nombre del proyecto y el botón principal.
+*/
 .app-header {
     display: flex;
     align-items: center;
@@ -33,6 +56,7 @@ body {
     padding: var(--spacing-md) var(--spacing-lg);
 }
 
+/* Botón principal del header */
 .app-header button {
     border: 0;
     border-radius: var(--radius-md);
@@ -43,28 +67,42 @@ body {
     cursor: pointer;
 }
 
+
+/* ============================= */
+/* Layout general */
+/* ============================= */
+/* 
+   Estructura principal del dashboard.
+   La primera columna es la sidebar.
+   La segunda columna es el contenido principal.
+*/
 .app-layout {
     display: grid;
     grid-template-columns: 240px 1fr;
     min-height: calc(100vh - 72px);
 }
 
+
+/* ============================= */
+/* Sidebar / navegación lateral */
+/* ============================= */
+/* 
+   Menú lateral con los enlaces principales de navegación.
+*/
 .sidebar {
     background-color: var(--color-surface);
     border-right: 1px solid var(--color-border);
     padding: var(--spacing-lg);
 }
 
-.dashboard {
-    padding: var(--spacing-lg);
-}
-
+/* Quitamos estilos por defecto de la lista */
 .sidebar ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+/* Enlaces del menú lateral */
 .sidebar a {
     display: block;
     padding: var(--spacing-sm) 0;
@@ -72,16 +110,36 @@ body {
     text-decoration: none;
 }
 
+
+/* ============================= */
+/* Contenido principal */
+/* ============================= */
+/* 
+   Zona principal donde se muestran estadísticas y candidaturas.
+*/
+.dashboard {
+    padding: var(--spacing-lg);
+}
+
+
+/* ============================= */
+/* Sección de estadísticas */
+/* ============================= */
+/* 
+   Contenedor de las cards/resumen del dashboard.
+*/
 .stats-section {
     margin-top: var(--spacing-lg);
 }
 
+/* Grid que distribuye las cards en columnas */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-md);
 }
 
+/* Card individual de estadística */
 .stat-card {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -89,14 +147,93 @@ body {
     padding: var(--spacing-lg);
 }
 
+/* Texto descriptivo de cada card */
 .stat-card__label {
     display: block;
     color: var(--color-muted);
     font-size: 0.875rem;
 }
 
+/* Número principal de cada card */
 .stat-card__value {
     display: block;
     margin-top: var(--spacing-sm);
     font-size: 2rem;
+}
+
+
+/* ============================= */
+/* Tabla de candidaturas */
+/* ============================= */
+/* 
+   Tabla principal con empresa, puesto, stack, estado, fecha y acciones.
+*/
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-md);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+/* Celdas de cabecera y contenido */
+.applications-table th,
+.applications-table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Encabezados de la tabla */
+.applications-table th {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Quitamos el borde inferior de la última fila */
+.applications-table tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ============================= */
+/* Estados de candidatura */
+/* ============================= */
+/* 
+   Badge base para todos los estados.
+   Los modificadores cambian color según el estado concreto.
+*/
+.status-badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Estado: enviada */
+.status-badge--sent {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* Estado: entrevista */
+.status-badge--interview {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+/* Estado: prueba técnica */
+.status-badge--test {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Estado: rechazada */
+.status-badge--rejected {
+    background-color: #fee2e2;
+    color: #b91c1c;
 }
