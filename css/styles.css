@@ -237,3 +237,42 @@ body {
     background-color: #fee2e2;
     color: #b91c1c;
 }
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+/* 
+   Ajustes para pantallas medianas y pequeñas.
+   La idea es que el dashboard no se rompa en tablet ni móvil.
+*/
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .app-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .app-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
