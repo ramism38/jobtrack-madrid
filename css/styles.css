@@ -71,3 +71,32 @@ body {
     color: var(--color-text);
     text-decoration: none;
 }
+
+.stats-section {
+    margin-top: var(--spacing-lg);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+.stat-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+}
+
+.stat-card__label {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+.stat-card__value {
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-size: 2rem;
+}
