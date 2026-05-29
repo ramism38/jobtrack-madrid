@@ -67,6 +67,10 @@ body {
     cursor: pointer;
 }
 
+.app-header button:hover {
+    opacity: 0.9;
+}
+
 
 /* ============================= */
 /* Layout general */
@@ -108,6 +112,10 @@ body {
     padding: var(--spacing-sm) 0;
     color: var(--color-text);
     text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: var(--color-primary);
 }
 
 
@@ -286,4 +294,9 @@ body {
     color: var(--color-text);
     font-weight: 600;
     cursor: pointer;
+}
+
+.table-action:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
