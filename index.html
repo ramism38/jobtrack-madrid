@@ -2,33 +2,66 @@
 <html lang="es">
 
 <head>
+    <!-- Configuracion basica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jobtrack-madrid</title>
+    <title>JobTrack Madrid</title>
+
+    <!-- Hoja de estilos principal del proyecto -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <!--
+        Header principal de la aplicacion.
+        Contiene la identidad del proyecto y la accion principal de la pantalla.
+    -->
     <header class="app-header">
         <h1>JobTrack Madrid</h1>
-        <button type="button" class="button button--primary">Nueva Candidatura</button>
+        <button type="button">Nueva candidatura</button>
     </header>
+
+    <!--
+        Contenedor general del dashboard.
+        En escritorio se comporta como un grid de dos columnas:
+        sidebar a la izquierda y contenido principal a la derecha.
+    -->
     <div class="app-layout">
+        <!--
+            Navegacion principal.
+            Usamos <nav> porque contiene enlaces para moverse por la aplicacion.
+            Algunos enlaces apuntan a secciones futuras que se desarrollaran mas adelante.
+        -->
         <nav class="sidebar" aria-label="Navegación principal">
             <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#candidaturas">Candidaturas</a></li>
                 <li><a href="#entrevistas">Entrevistas</a></li>
-                <li><a href="#pruebas">Pruebas técnicas</a></li>
+                <li><a href="#pruebas-tecnicas">Pruebas técnicas</a></li>
                 <li><a href="#estadisticas">Estadísticas</a></li>
             </ul>
         </nav>
+
+        <!--
+            Contenido principal del dashboard.
+            Aqui se muestran el resumen de actividad y la tabla de candidaturas recientes.
+        -->
         <main class="dashboard">
-            <section id="dashboard">
-                <h2>Dashboard</h2>
+            <!-- Seccion introductoria del dashboard -->
+            <section id="dashboard" aria-labelledby="dashboard-title">
+                <h2 id="dashboard-title">Dashboard</h2>
                 <p>Resumen de tus candidaturas y procesos activos.</p>
-                <section id="estadisticas" class="stats-section" aria-labelledby="stats-title">
+
+                <!--
+                    Seccion de estadisticas.
+                    Cada card resume un dato importante del proceso de busqueda.
+                -->
+                <section class="stats-section" aria-labelledby="stats-title">
                     <h2 id="stats-title">Resumen</h2>
+
+                    <!-- Grid que agrupa las cuatro cards de estadisticas -->
                     <div class="stats-grid">
+                        <!-- Cada article funciona como una unidad independiente de informacion -->
                         <article class="stat-card">
                             <span class="stat-card__label">Candidaturas enviadas</span>
                             <strong class="stat-card__value">24</strong>
@@ -52,76 +85,87 @@
                 </section>
             </section>
 
-            <section id="candidaturas">
-                <h2>Candidaturas recientes</h2>
+            <!-- Seccion con datos tabulares de candidaturas -->
+            <section id="candidaturas" aria-labelledby="applications-title">
+                <h2 id="applications-title">Candidaturas recientes</h2>
+
+                <!--
+                    table-wrapper limita el scroll horizontal a la tabla en pantallas pequenas.
+                    Asi evitamos que toda la pagina se rompa en movil.
+                -->
                 <div class="table-wrapper">
-                <table class="applications-table">
-                    <caption class="sr-only">Listado de candidaturas recientes</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Empresa</th>
-                            <th scope="col">Puesto</th>
-                            <th scope="col">Stack</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
+                    <table class="applications-table">
+                        <!-- Caption oculto visualmente, pero disponible para lectores de pantalla -->
+                        <caption class="sr-only">Listado de candidaturas recientes</caption>
 
-                    <tbody>
-                        <tr>
-                            <td>TalentHub</td>
-                            <td>Frontend Junior</td>
-                            <td>HTML, CSS, JavaScript</td>
-                            <td>
-                                <span class="status-badge status-badge--sent">Enviada</span>
-                            </td>
-                            <td><time datetime="2026-05-20">20/05/2026</time></td>
-                            <td>
-                                <button type="button" class="table-action" aria-label="Ver candidatura de TalentHub para Frontend Junior">Ver</button>
-                            </td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <!-- scope="col" ayuda a tecnologias de asistencia a identificar cabeceras -->
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Puesto</th>
+                                <th scope="col">Stack</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
 
-                        <tr>
-                            <td>DevMadrid</td>
-                            <td>Angular Trainee</td>
-                            <td>Angular, TypeScript</td>
-                            <td>
-                                <span class="status-badge status-badge--interview">Entrevista</span>
-                            </td>
-                            <td><time datetime="2026-05-18">18/05/2026</time></td>
-                            <td>
-                                <button type="button" class="table-action" aria-label="Ver candidatura de DevMadrid para Angular Trainee">Ver</button>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>TalentHub</td>
+                                <td>Frontend Junior</td>
+                                <td>HTML, CSS, JavaScript</td>
+                                <td>
+                                    <!-- Badge de estado: clase base + modificador especifico -->
+                                    <span class="status-badge status-badge--sent">Enviada</span>
+                                </td>
+                                <!-- time aporta una fecha legible y otra entendible por maquinas -->
+                                <td><time datetime="2026-05-20">20/05/2026</time></td>
+                                <td>
+                                    <button type="button" class="table-action" aria-label="Ver candidatura de TalentHub para Frontend Junior">Ver</button>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>CodeWorks</td>
-                            <td>Full Stack Junior</td>
-                            <td>Laravel, MySQL</td>
-                            <td>
-                                <span class="status-badge status-badge--test">Prueba técnica</span>
-                            </td>
-                            <td><time datetime="2026-05-15">15/05/2026</time></td>
-                            <td>
-                                <button type="button" class="table-action" aria-label="Ver candidatura de CodeWorks para Full Stack Junior">Ver</button>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>DevMadrid</td>
+                                <td>Angular Trainee</td>
+                                <td>Angular, TypeScript</td>
+                                <td>
+                                    <span class="status-badge status-badge--interview">Entrevista</span>
+                                </td>
+                                <td><time datetime="2026-05-18">18/05/2026</time></td>
+                                <td>
+                                    <button type="button" class="table-action" aria-label="Ver candidatura de DevMadrid para Angular Trainee">Ver</button>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>TechNova</td>
-                            <td>Frontend Developer</td>
-                            <td>React, CSS</td>
-                            <td>
-                                <span class="status-badge status-badge--rejected">Rechazada</span>
-                            </td>
-                            <td><time datetime="2026-05-20">20/05/2026</time></td>
-                            <td>
-                                <button type="button" class="table-action" aria-label="Ver candidatura de TechNova para Frontend Developer">Ver</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                            <tr>
+                                <td>CodeWorks</td>
+                                <td>Full Stack Junior</td>
+                                <td>Laravel, MySQL</td>
+                                <td>
+                                    <span class="status-badge status-badge--test">Prueba técnica</span>
+                                </td>
+                                <td><time datetime="2026-05-15">15/05/2026</time></td>
+                                <td>
+                                    <button type="button" class="table-action" aria-label="Ver candidatura de CodeWorks para Full Stack Junior">Ver</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TechNova</td>
+                                <td>Frontend Developer</td>
+                                <td>React, CSS</td>
+                                <td>
+                                    <span class="status-badge status-badge--rejected">Rechazada</span>
+                                </td>
+                                <td><time datetime="2026-05-20">20/05/2026</time></td>
+                                <td>
+                                    <button type="button" class="table-action" aria-label="Ver candidatura de TechNova para Frontend Developer">Ver</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </main>
