@@ -16,11 +16,10 @@
     <div class="app-layout">
         <nav class="sidebar" aria-label="Navegación principal">
             <ul>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#candidaturas">Candidaturas</a></li>
-                <li><a href="#entrevistas">Entrevistas</a></li>
-                <li><a href="#pruebas-tecnicas">Pruebas técnicas</a></li>
-                <li><a href="#estadisticas">Estadísticas</a></li>
+                <li>Candidaturas</li>
+                <li>Entrevistas</li>
+                <li>Pruebas técnicas</li>
+                <li>Estadísticas</li>
             </ul>
         </nav>
         <main class="dashboard">
@@ -57,14 +56,15 @@
                 <h2>Candidaturas recientes</h2>
                 <div class="table-wrapper">
                 <table class="applications-table">
+                    <caption class="sr-only">Listado de candidaturas recientes</caption>
                     <thead>
                         <tr>
-                            <th>Empresa</th>
-                            <th>Puesto</th>
-                            <th>Stack</th>
-                            <th>Estado</th>
-                            <th>Fecha</th>
-                            <th>Acciones</th>
+                            <th scope="col">Empresa</th>
+                            <th scope="col">Puesto</th>
+                            <th scope="col">Stack</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
 
@@ -76,9 +76,9 @@
                             <td>
                                 <span class="status-badge status-badge--sent">Enviada</span>
                             </td>
-                            <td>2026-05-20</td>
+                            <td><time datetime="2026-05-20">20/05/2026</time></td>
                             <td>
-                                <button type="button" class="table-action">Ver</button>
+                                <button type="button" class="table-action" aria-label="Ver candidatura de TalentHub para Frontend Junior">Ver</button>
                             </td>
                         </tr>
 
@@ -89,9 +89,9 @@
                             <td>
                                 <span class="status-badge status-badge--interview">Entrevista</span>
                             </td>
-                            <td>2026-05-18</td>
+                            <td><time datetime="2026-05-18">18/05/2026</time></td>
                             <td>
-                                <button type="button" class="table-action">Ver</button>
+                                <button type="button" class="table-action" aria-label="Ver candidatura de DevMadrid para Angular Trainee">Ver</button>
                             </td>
                         </tr>
 
@@ -102,9 +102,9 @@
                             <td>
                                 <span class="status-badge status-badge--test">Prueba técnica</span>
                             </td>
-                            <td>2026-05-15</td>
+                            <td><time datetime="2026-05-15">15/05/2026</time></td>
                             <td>
-                                <button type="button" class="table-action">Ver</button>
+                                <button type="button" class="table-action" aria-label="Ver candidatura de CodeWorks para Full Stack Junior">Ver</button>
                             </td>
                         </tr>
 
@@ -115,9 +115,9 @@
                             <td>
                                 <span class="status-badge status-badge--rejected">Rechazada</span>
                             </td>
-                            <td>2026-05-10</td>
+                            <td><time datetime="2026-05-20">20/05/2026</time></td>
                             <td>
-                                <button type="button" class="table-action">Ver</button>
+                                <button type="button" class="table-action" aria-label="Ver candidatura de TechNova para Frontend Developer">Ver</button>
                             </td>
                         </tr>
                     </tbody>
