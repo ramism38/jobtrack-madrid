@@ -11,22 +11,22 @@
 <body>
     <header class="app-header">
         <h1>JobTrack Madrid</h1>
-        <button type="button">Nueva Candidatura</button>
+        <button type="button" class="button button--primary">Nueva Candidatura</button>
     </header>
     <div class="app-layout">
         <nav class="sidebar" aria-label="Navegación principal">
             <ul>
-                <li>Candidaturas</li>
-                <li>Entrevistas</li>
-                <li>Pruebas técnicas</li>
-                <li>Estadísticas</li>
+                <li><a href="#candidaturas">Candidaturas</a></li>
+                <li><a href="#entrevistas">Entrevistas</a></li>
+                <li><a href="#pruebas">Pruebas técnicas</a></li>
+                <li><a href="#estadisticas">Estadísticas</a></li>
             </ul>
         </nav>
         <main class="dashboard">
             <section id="dashboard">
                 <h2>Dashboard</h2>
                 <p>Resumen de tus candidaturas y procesos activos.</p>
-                <section class="stats-section" aria-labelledby="stats-title">
+                <section id="estadisticas" class="stats-section" aria-labelledby="stats-title">
                     <h2 id="stats-title">Resumen</h2>
                     <div class="stats-grid">
                         <article class="stat-card">
